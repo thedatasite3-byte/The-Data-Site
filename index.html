@@ -45,12 +45,15 @@
   let url = base;
 
   if (page === "dashboard") {
-    url += "?page=dashboard";
+  url += "?page=dashboard";
 
-    if (token) {
-      url += "&token=" + token;
-    }
+  if (token) {
+    url += "&token=" + token;
   }
+} else {
+  // 🔥 FORCE LOGIN PAGE FROM APPS SCRIPT
+  url += "?page=login";
+}
 
   const iframe = document.getElementById("appFrame");
   const loader = document.getElementById("loader");
